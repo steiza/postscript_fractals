@@ -35,7 +35,7 @@ But if you crank up the recursion by changing the last line to be::
 
 More correctly, these are actually `aperiodic tilings <https://en.wikipedia.org/wiki/Aperiodic_tiling>`_ there are built using `substitution rules <https://en.wikipedia.org/wiki/Aperiodic_tiling#Substitutions>`_, and `there are a lot of them <http://tilings.math.uni-bielefeld.de/>`_.
 
-.. image:: http://raw.github.com/steiza/postscript_fractals/master/rendered/cananoical3.png
+.. image:: http://raw.github.com/steiza/postscript_fractals/master/rendered/canonical3.png
 
 So download this repo, make some fractals, and put them on stuff!
 
