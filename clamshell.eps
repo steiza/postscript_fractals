@@ -1,0 +1,120 @@
+%!PS-Adobe EPSF-3.0
+%%BoundingBox: 0 0 850 850
+
+/LIGHT_TRAPAZOID {
+    4 dict begin % 4 variable in local scope
+        /level exch def % grab level off the stack
+        /len exch def % grab len off the stack
+        /angle 18 def
+        /short_len len 1 2 angle sin mul sub mul def
+
+        level 0 gt {
+            gsave
+            54 rotate
+            short_len 0 translate
+            54 neg rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            grestore
+
+            gsave
+            108 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub DARK_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub DARK_TRAPAZOID
+            grestore
+
+            gsave
+            36 rotate
+            short_len level 1 sub DARK_TRAPAZOID
+            0 short_len translate
+            36 neg rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            0 short_len translate
+            36 neg rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+
+            grestore
+        } {
+            newpath
+            0 0 moveto
+            0 len rlineto
+            len angle cos mul len angle sin mul neg rlineto
+            0 len 2 len angle sin mul mul sub neg rlineto
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+        } ifelse
+    end
+
+} def
+
+/DARK_TRAPAZOID {
+    4 dict begin % 4 variable in local scope
+        /level exch def % grab level off the stack
+        /len exch def % grab len off the stack
+        /angle 18 def
+        /short_len len 1 2 angle sin mul sub mul def
+
+        level 0 gt {
+            gsave
+            54 rotate
+            short_len 0 translate
+            54 neg rotate
+            short_len level 1 sub DARK_TRAPAZOID
+            grestore
+
+            gsave
+            108 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub DARK_TRAPAZOID
+            144 neg rotate
+            0 short_len translate
+            180 rotate
+            short_len level 1 sub LIGHT_TRAPAZOID
+            grestore
+        } {
+            newpath
+            0 0 moveto
+            0 len rlineto
+            len angle cos mul len angle sin mul neg rlineto
+            0 len 2 len angle sin mul mul sub neg rlineto
+            closepath
+
+            gsave
+            0.5 setgray
+            fill
+            grestore
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+        } ifelse
+    end
+} def
+
+1 setlinejoin
+50 100 translate
+500 5 DARK_TRAPAZOID

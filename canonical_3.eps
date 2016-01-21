@@ -1,0 +1,846 @@
+%!PS-Adobe EPSF-3.0
+%%BoundingBox: 0 0 850 850
+
+/angle 1 2 atan def % ~26.5 degrees
+/expansion_factor 2 5 sqrt add def
+
+/SQUARE_1 {
+    4 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+
+            % Create center square
+            gsave
+            90 2 angle mul sub reflect mul neg rotate
+            short_len reflect mul 0 translate
+            90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 reflect mul neg rotate
+            short_len reflect mul 0 translate
+            -180 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_1
+            grestore
+
+            4 {
+                gsave
+                short_len level 1 sub reflect DART
+                -90 2 angle mul add reflect mul rotate
+                short_len reflect mul 0 translate
+
+                % XXX - this causes problems in SQUARE_2 level 2
+                %gsave
+                %-90 angle add reflect mul rotate
+                %short_len level 1 sub reflect neg DIAMOND_2
+                %grestore
+
+                90 angle sub reflect mul rotate
+                short_len reflect mul 0 translate
+                -90 angle sub reflect mul rotate
+                short_len level 1 sub reflect SQUARE_2
+                angle reflect mul rotate
+                short_len reflect mul 0 translate
+                angle neg reflect mul rotate
+                short_len level 1 sub reflect DIAMOND_1
+                grestore
+
+                angle reflect mul rotate
+                len reflect mul 0 translate
+                angle 90 add neg reflect mul rotate
+            } repeat
+
+            grestore
+        } {
+            newpath
+            0 0 moveto
+            angle reflect mul rotate
+            len reflect mul 0 rlineto
+            0 len neg rlineto
+            len reflect mul neg 0 rlineto
+            0 len rlineto
+            angle reflect mul neg rotate
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+        } ifelse
+
+    end
+} def
+
+/SQUARE_2 {
+    3 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+            short_len level 1 sub reflect DART
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub -1 reflect mul SQUARE_3
+            angle 2 mul reflect mul neg rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+
+            gsave
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 reflect mul rotate
+            short_len reflect mul 0 translate
+            angle 90 sub reflect mul rotate
+            short_len level 1 sub -1 reflect mul SQUARE_2
+            grestore
+
+            90 angle 3 mul sub reflect mul rotate
+            short_len level 1 sub reflect DART
+            180 reflect mul rotate
+            short_len level 1 sub reflect DART
+
+            gsave
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            grestore
+
+            -90 reflect mul rotate
+
+            gsave
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            grestore
+
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_1
+            180 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect SQUARE_3
+            90 reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+
+            gsave
+            angle 90 sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+
+            gsave
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 reflect mul rotate
+            short_len reflect mul 0 translate
+            angle 90 sub reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            angle reflect mul neg rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            90 2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            -90 reflect mul rotate
+            short_len level 1 sub reflect SQUARE_1
+
+            gsave
+            angle 90 sub reflect mul rotate
+            short_len reflect mul 0 translate
+
+            gsave
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            180 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            grestore
+
+            90 reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            grestore
+
+            gsave
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul neg rotate
+            short_len level 1 sub reflect DIAMOND_1
+
+            gsave
+            90 angle 2 mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+            grestore
+
+            90 angle 2 mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 angle 2 mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle neg reflect mul rotate
+            short_len level 1 sub reflect DART
+            -90 reflect mul rotate
+
+            gsave
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            grestore
+
+            gsave
+            180 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            90 reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+        } {
+            gsave
+
+            newpath
+            0 0 moveto
+            angle reflect mul rotate
+
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+
+            grestore
+
+            % Orientation mark for testing
+            %gsave
+
+            %angle reflect mul rotate
+            %reflect 0.8 mul len mul -0.93 len mul translate
+            %angle reflect mul rotate
+
+            %newpath
+            %0 0 moveto
+            %0 0.15 len mul rlineto
+            %90 rotate
+            %0 0.15 reflect mul len mul rlineto
+            %90 rotate
+            %0 0.15 len mul rlineto
+            %90 rotate
+            %0 0.15 reflect mul len mul rlineto
+            %90 rotate
+
+            %closepath
+            %0 setgray
+            %fill
+
+            %grestore
+        } ifelse
+
+    end
+} def
+
+/SQUARE_3 {
+    3 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+            short_len level 1 sub reflect DART
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            -2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+
+            gsave
+            90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect DART
+            180 reflect mul rotate
+            short_len level 1 sub reflect DART
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            180 2 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -180 angle 2 mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            -90 reflect mul rotate
+            short_len level 1 sub reflect SQUARE_1
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            -180 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            -90 reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            180 2 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            90 reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            -90 angle add reflect mul rotate
+
+            gsave
+            short_len reflect mul 0 translate
+            -180 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            grestore
+
+            -90 reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_1
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            -180 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_3
+
+            gsave
+            -180 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            180 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            180 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            grestore
+
+            90 reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            180 angle sub reflect mul rotate
+            short_len level 1 sub reflect DART
+            -180 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            180 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+
+            gsave
+            90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            -180 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+
+            grestore
+        } {
+            gsave
+
+            newpath
+            0 0 moveto
+            angle reflect mul rotate
+
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+            0 -1 len mul rlineto
+            90 reflect mul rotate
+
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+
+            grestore
+
+            % Orientation mark for testing
+            %gsave
+
+            %angle reflect mul rotate
+            %0.65 len mul reflect mul 0.5 len mul neg translate
+
+            %newpath
+            %0 0 moveto
+            %2 angle mul reflect mul neg rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %90 rotate
+            %0.30 len mul 0 rlineto
+            %90 rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %90 rotate
+            %0.30 len mul 0 rlineto
+            %90 rotate
+            %closepath
+            %0 setgray
+            %fill
+
+            %grestore
+        } ifelse
+
+    end
+} def
+
+/DIAMOND_1 {
+    4 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+
+            short_len level 1 sub reflect DART
+            -90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            180 2 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            -90 3 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            angle reflect mul rotate
+            90 3 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            90 reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_1
+            -90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_1
+            180 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_1
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            2 angle mul reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            90 reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            -2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            2 angle mul reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_1
+
+            gsave
+            -90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect DART
+            grestore
+
+            angle neg reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            -180 3 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            angle neg reflect mul rotate
+            short_len reflect mul 0 translate
+            180 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+            grestore
+
+            gsave
+            90 reflect mul rotate
+            short_len level 1 sub reflect DART
+            -90 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            grestore
+
+            gsave
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            angle neg reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect SQUARE_3
+            grestore
+        } {
+            gsave
+            newpath
+            0 0 moveto
+            angle 2 mul reflect mul rotate
+            len reflect mul 0 rlineto
+            90 angle add reflect mul neg rotate
+            len reflect mul 0 rlineto
+            angle 90 sub reflect mul rotate
+            len reflect mul 0 rlineto
+            90 angle add reflect mul neg rotate
+            len reflect mul 0 rlineto
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+            grestore
+
+            % Orientation mark for testing
+            %gsave
+            %newpath
+            %0 0 moveto
+            %angle 2 mul reflect mul rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %90 angle add reflect mul neg rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %angle 90 sub reflect mul rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %90 angle add reflect mul neg rotate
+            %0.15 len mul 0 rlineto
+            %closepath
+            %0 setgray
+            %fill
+            %grestore
+        } ifelse
+
+    end
+} def
+
+/DIAMOND_2 {
+    4 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+
+            90 reflect mul rotate
+            short_len level 1 sub reflect DART
+            -180 2 angle mul add reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_3
+            -90 reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            90 2 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            2 angle mul reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_1
+            angle neg reflect mul rotate
+            short_len reflect mul 0 translate
+            angle reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+
+            gsave
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            2 angle mul reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            grestore
+
+            angle reflect mul rotate
+            short_len reflect mul 0 translate
+            angle neg reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect SQUARE_3
+            90 reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+
+            gsave
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            180 angle sub reflect mul rotate
+            short_len level 1 sub reflect DART
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            grestore
+
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            -2 angle mul reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            90 reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_2
+            2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect DIAMOND_1
+
+            -90 reflect mul rotate
+            short_len level 1 sub reflect SQUARE_1
+            -90 3 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_1
+
+            -2 angle mul reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+
+            180 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -180 angle add reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_1
+            -90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            -90 angle sub reflect mul rotate
+            short_len reflect mul 0 translate
+            90 2 angle mul add reflect mul rotate
+            short_len level 1 sub reflect neg SQUARE_2
+            90 3 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+            -90 angle add reflect mul rotate
+            short_len reflect mul 0 translate
+            2 angle mul reflect mul rotate
+            short_len level 1 sub reflect neg DIAMOND_2
+            90 2 angle mul sub reflect mul rotate
+            short_len reflect mul 0 translate
+            short_len reflect mul 0 translate
+            180 1 angle mul sub reflect mul rotate
+            short_len level 1 sub reflect SQUARE_2
+
+            grestore
+        } {
+            gsave
+            newpath
+            0 0 moveto
+            angle 2 mul reflect mul rotate
+            len reflect mul 0 rlineto
+            90 angle add reflect mul neg rotate
+            len reflect mul 0 rlineto
+            angle 90 sub reflect mul rotate
+            len reflect mul 0 rlineto
+            90 angle add reflect mul neg rotate
+            len reflect mul 0 rlineto
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+            grestore
+
+            % Orientation mark for testing
+            %gsave
+            %angle 2 mul reflect mul rotate
+            %0.85 len mul reflect mul 0 translate
+            %newpath
+            %0 0 moveto
+            %0.15 len mul reflect mul 0 rlineto
+            %90 angle add reflect mul neg rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %angle 90 sub reflect mul rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %90 angle add reflect mul neg rotate
+            %0.15 len mul reflect mul 0 rlineto
+            %closepath
+            %fill
+            %grestore
+        } ifelse
+
+    end
+} def
+
+/DART {
+    4 dict begin
+        /reflect exch def
+        /level exch def
+        /len exch def
+        /short_len len expansion_factor div def
+
+        level 0 gt {
+            gsave
+
+            2 {
+                short_len level 1 sub reflect DART
+
+                gsave
+                -90 angle add reflect mul rotate
+                short_len reflect mul 0 translate
+                -90 angle add reflect mul rotate
+                short_len reflect mul 0 translate
+                -90 angle add reflect mul rotate
+                short_len level 1 sub reflect neg SQUARE_2
+                180 angle sub reflect mul rotate
+                short_len reflect mul 0 translate
+                90 2 angle mul sub reflect mul rotate
+                short_len level 1 sub reflect DIAMOND_1
+                -90 angle add reflect mul rotate
+                short_len reflect mul 0 translate
+                -180 2 angle mul add reflect mul rotate
+                short_len level 1 sub reflect neg SQUARE_3
+                grestore
+
+                gsave
+                -90 2 angle mul add reflect mul rotate
+                short_len reflect mul 0 translate
+                90 angle sub reflect mul rotate
+                short_len reflect mul 0 translate
+                -90 angle sub reflect mul rotate
+                short_len level 1 sub reflect SQUARE_2
+                angle reflect mul rotate
+                short_len reflect mul 0 translate
+                angle neg reflect mul rotate
+                short_len level 1 sub reflect DIAMOND_1
+
+                gsave
+                -90 angle add reflect mul rotate
+                short_len reflect mul 0 translate
+                180 angle sub reflect mul rotate
+                short_len level 1 sub reflect DART
+                grestore
+
+                2 angle mul reflect mul rotate
+                short_len reflect mul 0 translate
+                -2 angle mul reflect mul rotate
+                short_len level 1 sub reflect SQUARE_3
+                angle reflect mul rotate
+                short_len reflect mul 0 translate
+                angle neg reflect mul rotate
+                short_len level 1 sub reflect DART
+                grestore
+
+                -90 angle add reflect mul rotate
+                len reflect mul 0 translate
+                angle reflect mul rotate
+                len reflect mul 0 translate
+                -90 2 angle mul sub reflect mul rotate
+            } repeat
+
+            grestore
+        } {
+            gsave
+            newpath
+            0 0 moveto
+            90 2 angle mul sub reflect mul neg rotate
+            len reflect mul 0 rlineto
+            angle reflect mul neg rotate
+            len reflect mul 0 rlineto
+            angle 180 add reflect mul rotate
+            len reflect mul 0 rlineto
+            angle reflect mul neg rotate
+            len reflect mul 0 rlineto
+            closepath
+
+            0 setgray
+            0.5 setlinewidth
+            stroke
+            grestore
+        } ifelse
+
+    end
+} def
+
+1 setlinejoin
+50 350 translate
+350 2 1 SQUARE_2
+%350 1 1 SQUARE_1
